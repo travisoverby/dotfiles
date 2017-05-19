@@ -47,3 +47,7 @@ filetype plugin indent on    " required
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Enable 'paste mode' for cleaner copy/paste when F2 is hit in 'insert' mode
+set pastetoggle=<F2>
+" Always displays file name at bottom of buffer
+set laststatus=2
