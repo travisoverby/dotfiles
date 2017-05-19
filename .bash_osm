@@ -1,0 +1,49 @@
+export PATH=$PATH:~/ws/scripts/localdev/bin
+export EDITOR=nano
+export IBM_DB_HOME=/home/db2inst1/sqllib
+
+LIGHT_GREEN="\[\033[01;32m\]"
+LIGHT_RED="\[\033[01;31m\]"
+LIGHT_BLUE="\[\033[01;34m\]"
+BROWN="\[\033[00;33m\]"
+NO_COLOR="\[\033[00m\]"
+CHECKBOX_CHECK="\xE2\x98\x91"
+CHECKBOX_X="\xE2\x98\x92"
+
+# Returns a box containing a check when there are no local changes
+# Box contains an x when there are local changes
+git_status_flag() {
+  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" ]; then
+    if [ "$(git status --porcelain 2> /dev/null)" ]; then
+      echo -e " ${CHECKBOX_X}"
+    else
+      echo -e " ${CHECKBOX_CHECK}"
+    fi
+  fi
+}
+export -f git_status_flag
+
+# Returns the current branch name with parentheticles around it
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+export -f parse_git_branch
+
+# Returns the value of the environment variable GIT_AUTHOR_NAME which is used by osm hitch
+# When unhitch returns nothing
+hitch_author_name() {
+  if [ -n "$GIT_AUTHOR_NAME" ]; then
+    echo " $GIT_AUTHOR_NAME"
+  fi
+}
+export -f hitch_author_name
+
+PS1="${LIGHT_GREEN}\u@\h${NO_COLOR} ${BROWN}\$(parse_git_branch)\$(hitch_author_name)${NO_COLOR}\n${LIGHT_BLUE}\w${NO_COLOR} \$ "
+
+alias branchhealth="rvm in ~/ws/scripts/branchtools 2.3.0 do ~/ws/scripts/branchtools/bin/branchhealth"
+alias bh=branchhealth
+alias gl='git log --graph --decorate --oneline'
+alias gll='git log --graph --decorate'
+
+# Enables osm hitch and osm tab completion
+. ~/ws/scripts/localdev/env/osm.bashrc

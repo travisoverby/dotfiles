@@ -54,7 +54,7 @@ set laststatus=2
 " Auto close curly braces
 inoremap { {<return><return>}<Esc>ki
 " Auto close parentheses
-inoremap ( ()<Esc>i
+" inoremap ( ()<Esc>i
 " Auto close square brackets
 inoremap [ []<Esc>i
 " Auto close square brackets
@@ -63,4 +63,6 @@ hi MatchParen cterm=bold ctermbg=blue ctermfg=none
 " Word wrap without hard line-breaks
 set wrap
 set linebreak
-set nolist "list disables linebreak
+set nolist       "list disables linebreak
+" Disables copying of line numbers in Vim
+se mouse+=a
