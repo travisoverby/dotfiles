@@ -4,6 +4,8 @@ set shiftwidth=2
 " On pressing tab, insert 2 spaces
 set colorcolumn=100
 " Sets a visual marker at 100th character in editor
+set number
+" Displays line numbers in editor
 set expandtab
 set nocompatible              " be iMproved, required
 filetype off                  " required
