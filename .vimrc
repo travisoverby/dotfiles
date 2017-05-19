@@ -46,8 +46,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " Disable auto-commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Enable 'paste mode' for cleaner copy/paste when F2 is hit in 'insert' mode
 set pastetoggle=<F2>
 " Always displays file name at bottom of buffer
 set laststatus=2
+inoremap { {}<Esc>i
