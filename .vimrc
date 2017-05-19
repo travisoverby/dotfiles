@@ -55,6 +55,9 @@ set laststatus=2
 inoremap { {<return><return>}<Esc>ki
 " Auto close parentheses
 inoremap ( ()<Esc>i
+" Auto close square brackets
+inoremap [ []<Esc>i
+" Auto close square brackets
 " Only highlight background of matching parentheses, brackets, or braces
 hi MatchParen cterm=bold ctermbg=blue ctermfg=none
 " Word wrap without hard line-breaks
