@@ -52,7 +52,9 @@ set pastetoggle=<F2>
 " Always displays file name at bottom of buffer
 set laststatus=2
 " Auto close curly braces
-inoremap { {}<Esc>i
+inoremap { {<return><return>}<Esc>ki
+" Auto close parentheses
+inoremap ( ()<Esc>i
 " Only highlight background of matching parentheses, brackets, or braces
 hi MatchParen cterm=bold ctermbg=blue ctermfg=none
 " Word wrap without hard line-breaks
