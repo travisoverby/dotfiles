@@ -1,0 +1,33 @@
+[merge]
+	conflictstyle = diff3
+[push]
+	default = current
+[core]
+	excludesfile = dev/.gitignore
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	br = branch
+	di = diff
+	id = log -1 --pretty=%h
+	lg = log origin/master.. --name-status --oneline
+	pu = push -u
+[color]
+	ui = true
+[user]
+	name = Travis Overby
+	email = toverby@on-site.com
+[url "https://"]
+	insteadOf = git://
+[rerere]
+	enabled = true
+	autoupdate = true
+[hub]
+	host = github.on-site.com
+	host = github.on-site.com
+	host = github.on-site.com
+	host = github.on-site.com
+	host = github.on-site.com
+	host = github.on-site.com
