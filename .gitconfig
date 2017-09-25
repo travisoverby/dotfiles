@@ -1,33 +1,24 @@
-[merge]
-	conflictstyle = diff3
-[push]
-	default = current
-[core]
-	excludesfile = dev/.gitignore
-[alias]
-	st = status
-	ci = commit
-	co = checkout
-	cp = cherry-pick
-	br = branch
-	di = diff
-	id = log -1 --pretty=%h
-	lg = log origin/master.. --name-status --oneline
-	pu = push -u
-[color]
-	ui = true
+# This is Git's per-user configuration file.
 [user]
-	name = Travis Overby
-	email = toverby@on-site.com
-[url "https://"]
-	insteadOf = git://
-[rerere]
-	enabled = true
-	autoupdate = true
-[hub]
-	host = github.on-site.com
-	host = github.on-site.com
-	host = github.on-site.com
-	host = github.on-site.com
-	host = github.on-site.com
-	host = github.on-site.com
+    email = travisoverby@gmail.com
+    name = Travis
+[push]
+    default = upstream
+[color]
+    ui = auto
+[core]
+    whitespace = trailing-space,space-before-tab
+[diff]
+    renames = copies
+
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  lg = log --name-status --oneline
+  id = log -1 --pretty=%h
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  pu = push -u

@@ -1,0 +1,7 @@
+alias tso='cd /var/www/travisoverby.com; ls'
+alias overby='cd /var/www/overby.io; ls'
+alias slim='cd /var/www/overby.io/app/src/public; ls'
+alias sites-conf='cd /etc/apache2/sites-available; ls'
+alias apache='sudo service apache2'
+alias railstut='cd /var/www/overby.io/railstutorial; ls'
+alias pl='cd /var/www/travisoverby.com/public_html/plumbing-form; ls'
